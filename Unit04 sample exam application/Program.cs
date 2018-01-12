@@ -114,7 +114,7 @@ namespace Unit04_sample_exam_application
                 {
                     Console.WriteLine("Please try again");
                 }
-            } while ((6 < exercise) | (exercise < 0));
+            } while ( !((6 < exercise) | (exercise > 0)) );
 
             //calculate the calorie intake based off exercise
             double cal = 0;
