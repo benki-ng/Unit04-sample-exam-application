@@ -16,7 +16,14 @@ namespace Unit04_sample_exam_application
             {
                 Console.WriteLine("Input your height in centimeters");
                 var input = Console.ReadLine();
-                height = double.Parse(input);
+                try
+                {
+                    height = double.Parse(input);
+                }
+                catch
+                {
+                    Console.WriteLine("Please try again");
+                }
             } while ((120 > height) | (height > 210));
 
             //input the weight and check its in the range
@@ -25,7 +32,14 @@ namespace Unit04_sample_exam_application
             {
                 Console.WriteLine("Input your weight in kg");
                 var input = Console.ReadLine();
-                weight = double.Parse(input);
+                try
+                {
+                    weight = double.Parse(input);
+                }
+                catch
+                {
+                    Console.WriteLine("Please try again");
+                }
             } while ((30 > weight) | (weight > 250));
 
             //input the age and check its in the range
@@ -34,7 +48,14 @@ namespace Unit04_sample_exam_application
             {
                 Console.WriteLine("Input your age in years");
                 var input = Console.ReadLine();
-                age = Int32.Parse(input);
+                try
+                {
+                    age = Int32.Parse(input);
+                }
+                catch
+                {
+                    Console.WriteLine("Please try again");
+                }
             } while ((14 > age) | (age > 100));
 
             //input the gender and check its valid
@@ -85,7 +106,14 @@ namespace Unit04_sample_exam_application
                 Console.WriteLine("4 is heavy exercise");
                 Console.WriteLine("5 is very heavy exercise");
                 var input = Console.ReadLine();
-                exercise = Int32.Parse(input);
+                try
+                {
+                    exercise = Int32.Parse(input);
+                }
+                catch
+                {
+                    Console.WriteLine("Please try again");
+                }
             } while ((6 < exercise) | (exercise < 0));
 
             //calculate the calorie intake based off exercise
