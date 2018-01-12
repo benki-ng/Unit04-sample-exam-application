@@ -65,11 +65,12 @@ namespace Unit04_sample_exam_application
 
 
             //calculate bmi
-            double bmi = Math.Pow((height * 100), 2);
+            double bmi = weight / Math.Pow((height/100), 2);
             bmi = Math.Round(bmi, 1);
-            Console.Write("Your bmi is: ");
+            Console.Write("Your BMI is: ");
             Console.WriteLine(bmi);
-            Console.WriteLine("Your target bmi is: 22");
+            Console.WriteLine("Your target BMI is: 22");
+            Console.WriteLine();
 
 
             //input the level of exercise
@@ -113,11 +114,12 @@ namespace Unit04_sample_exam_application
             //print calories
             Console.Write("You should consume ");
             Console.Write(cal);
-            Console.WriteLine(" calories per day");
+            Console.WriteLine(" calories per day.");
+            Console.WriteLine();
 
 
             //wait for user input to terminate program
-            Console.WriteLine("Press enter to exit program");
+            Console.WriteLine("Press enter to exit program.");
             Console.ReadKey();
         }
     }
