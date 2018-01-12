@@ -10,6 +10,115 @@ namespace Unit04_sample_exam_application
     {
         static void Main(string[] args)
         {
+            //input the height and check its in the range
+            double height = 0;
+            do
+            {
+                Console.WriteLine("Input your height in centimeters");
+                var input = Console.ReadLine();
+                height = double.Parse(input);
+            } while ((120 > height) | (height > 210));
+
+            //input the weight and check its in the range
+            double weight = 0;
+            do
+            {
+                Console.WriteLine("Input your weight in kg");
+                var input = Console.ReadLine();
+                weight = double.Parse(input);
+            } while ((30 > weight) | (weight > 250));
+
+            //input the age and check its in the range
+            int age = 0;
+            do
+            {
+                Console.WriteLine("Input your age in years");
+                var input = Console.ReadLine();
+                age = Int32.Parse(input);
+            } while ((14 > age) | (age > 100));
+
+            //input the gender and check its valid
+            var gender = "cow";
+            do
+            {
+                Console.WriteLine("Input your gender");
+                gender = Console.ReadLine();
+            } while ( !((gender == "male") | (gender == "female")) );
+
+           
+            //calculate the bmr based on the persons gender
+            double bmr = 0;
+            if (gender == "male")
+            {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            }
+            if (gender == "female") {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            }
+            
+            //round the bmr to 2dp
+            bmr = Math.Round(bmr, 2);
+            
+            //print the persons bmr
+            Console.Write("Your BMR is: ");
+            Console.WriteLine(bmr);
+
+
+            //calculate bmi
+            double bmi = Math.Pow((height * 100), 2);
+            bmi = Math.Round(bmi, 1);
+            Console.Write("Your bmi is: ");
+            Console.WriteLine(bmi);
+            Console.WriteLine("Your target bmi is: 22");
+
+
+            //input the level of exercise
+            int exercise = 0;
+            do
+            {
+                //ask the user how much exercise they do
+                Console.WriteLine("How much exercise do you do?");
+                Console.WriteLine("1 is little to no exercise");
+                Console.WriteLine("2 is light exercise");
+                Console.WriteLine("3 is moderate exercise");
+                Console.WriteLine("4 is heavy exercise");
+                Console.WriteLine("5 is very heavy exercise");
+                var input = Console.ReadLine();
+                exercise = Int32.Parse(input);
+            } while ((6 < exercise) | (exercise < 0));
+
+            //calculate the calorie intake based off exercise
+            double cal = 0;
+            if (exercise == 1)
+            {
+                cal = bmr * 1.2;
+            }
+            if (exercise == 2)
+            {
+                cal = bmr * 1.375;
+            }
+            if (exercise == 3)
+            {
+                cal = bmr * 1.55;
+            }
+            if (exercise == 4)
+            {
+                cal = bmr * 1.725;
+            }
+            if (exercise == 5)
+            {
+                cal = bmr * 1.9;
+            }
+
+            //print calories
+            Console.Write("You should consume ");
+            Console.Write(cal);
+            Console.WriteLine(" calories per day");
+
+
+            //wait for user input to terminate program
+            Console.WriteLine("Press enter to exit program");
+            Console.ReadKey();
         }
     }
 }
