@@ -118,25 +118,23 @@ namespace Unit04_sample_exam_application
 
             //calculate the calorie intake based off exercise
             double cal = 0;
-            if (exercise == 1)
+            switch (exercise)
             {
-                cal = bmr * 1.2;
-            }
-            if (exercise == 2)
-            {
-                cal = bmr * 1.375;
-            }
-            if (exercise == 3)
-            {
-                cal = bmr * 1.55;
-            }
-            if (exercise == 4)
-            {
-                cal = bmr * 1.725;
-            }
-            if (exercise == 5)
-            {
-                cal = bmr * 1.9;
+                case 1:
+                    cal = bmr * 1.2;
+                    break;
+                case 2:
+                    cal = bmr * 1.375;
+                    break;
+                case 3:
+                    cal = bmr * 1.55;
+                    break;
+                case 4:
+                    cal = bmr * 1.725;
+                    break;
+                case 5:
+                    cal = bmr * 1.9;
+                    break;
             }
 
             //print calories
